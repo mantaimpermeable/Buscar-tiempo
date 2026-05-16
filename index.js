@@ -42,8 +42,10 @@ function displayInfo(datos){
     //Sacamos valores de las constante de "datos" que es un json con toda la informacion
     //scada de la api, para esto usamos la deestructuracion 
     const {name: ciudad, 
-           main: {temp, humedad},
+           main: {temp, humidity},
            weather: [{descripcion,id}]} = datos;
+
+           console.log(datos);
 
     //Hacemos que el cuadro sea visible y luego vamos añadiendo
     cuadro.textContent="";
@@ -57,7 +59,7 @@ function displayInfo(datos){
 
     ciudadDisplay.textContent= ciudad;
     temperaturaDisplay.textContent = `${(temp - 273.15).toFixed(1)}ºC`;
-    humedadDisplay.textContent = `Humedad: ${humedad}%`;
+    humedadDisplay.textContent = `Humedad: ${humidity}%`;
     descripcionDisplay.textContent = descripcion;
     simboloDisplay.textContent = getSimboloTiempo(id);
 
@@ -73,10 +75,6 @@ function displayInfo(datos){
     cuadro.appendChild(humedadDisplay);
     cuadro.appendChild(descripcionDisplay);
     cuadro.appendChild(simboloDisplay);
-
-
-    
-
 
 
     }
