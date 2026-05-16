@@ -27,13 +27,19 @@ tiempo.addEventListener("submit", async event => {
 });
 
 async function getTiempoInfo(ciudad){
+    //url para coger los datos de la ciudad con nuestra llave
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${API_KEY}`;
-
+ 
     const respuesta = await fetch(apiUrl);
-    console.log(respuesta);
+    
+    if(!respuesta.ok){
+        throw new Error("No se ha podido encontrar los datos");
+    }
+    //Retornar la respuesta en formato json
+    return await respuesta.json();
 }
 function displayInfo(datos){
-
+    
 }
 function getSimboloTiempo(IdTiempo){
 
