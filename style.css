@@ -1,0 +1,79 @@
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:rgb(188, 188, 188);
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+.tiempo{
+    margin: 20px;
+
+}
+.inputCiudad{
+    padding: 10px;
+    font-size: 2em;
+    font-weight: bold;
+    border: 2px solid;
+    border-radius: 10px;
+    margin: 10px;
+    width: 300px;
+}
+button[type="submit"]{
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 2em;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+button[type="submit"]:hover{
+    background-color:rgb(37, 152, 37);
+}
+.cuadro{
+    background: linear-gradient(rgb(43, 43, 255), rgb(255, 188, 65));
+    padding: 50px;
+    box-shadow: 2px 2px 5px black;
+    min-width: 300px;
+    display: flex;
+    flex-direction:  column;
+    align-items: center;
+}
+h1{
+    font-size: 3.5em;
+    margin-top: 0;
+    margin-bottom: 25 px;
+}
+p{
+    font-size: 1.5em;
+    margin: 5px 0;
+}
+.ciudad, .temperatura{
+    font-size: 3.5em;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 25px;
+}
+.humedad{
+    font-weight: bold;
+    margin-bottom: 25px;
+
+}
+.descripcion{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2em;
+}
+.simboloTiempo{
+    margin: 0;
+    font-size: 7.5em;
+}
+.error{
+    font-size: 2.5em;
+    font-weight: bold;
+    color : rgba(0, 0, 0, 0.707);
+
+}
