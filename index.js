@@ -5,12 +5,20 @@ const tiempo = document.querySelector(".tiempo");
 const ciudadInput = document.querySelector(".inputCiudad");
 const cuadro = document.querySelector(".cuadro");
 
-tiempo.addEventListener("submit", event => {
+tiempo.addEventListener("submit", async event => {
     event.preventDefault();
 
     const ciudad = ciudadInput.value;
 
     if(ciudad){
+        try{
+            const datoTiempo = await getTiempoInfo(ciudad);
+            displayInfo(datoTiempo);
+        }
+        catch(error){
+            console.error(error);
+            displayError(error);
+        }
 
     }
     else{
@@ -19,7 +27,10 @@ tiempo.addEventListener("submit", event => {
 });
 
 async function getTiempoInfo(ciudad){
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${API_KEY}`;
 
+    const respuesta = await fetch(apiUrl);
+    console.log(respuesta);
 }
 function displayInfo(datos){
 
